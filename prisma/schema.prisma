@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Project {
+  id                String   @id @default(cuid())
+  name              String
+  videoUrl          String
+  videoName         String
+  videoDuration     Float
+  videoWidth        Int      @default(0)
+  videoHeight       Int      @default(0)
+  thumbnailUrl      String?
+  transcription     String?  // JSON stored as text
+  analysis          String?  // JSON stored as text
+  segments          String?  // JSON stored as text
+  illustrations     String?  // JSON stored as text
+  subtitleStyle     String?  // JSON stored as text
+  subtitlesEnabled  Boolean  @default(true)
+  illustrationStyle String   @default("flat")
+  customPrompt      String?
+  promptHistory     String?  // JSON stored as text
+  status            String   @default("uploading") // uploading | processing | ready | failed
+  outputUrl         String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}

@@ -1,0 +1,11 @@
+node_modules
+.next
+.git
+.env
+.env.local
+public/uploads/*
+public/outputs/*
+data/
+out/
+!public/uploads/.gitkeep
+!public/outputs/.gitkeep

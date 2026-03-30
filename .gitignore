@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+public/uploads/*
+public/outputs/*
+!public/uploads/.gitkeep
+!public/outputs/.gitkeep
+data/
+*.tsbuildinfo
+next-env.d.ts
+
+/src/generated/prisma
